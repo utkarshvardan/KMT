@@ -7,6 +7,9 @@ public class GraphFlow {
 	private int numberofEdges;
 	private List<List<Edge>> adjList;
 	
+		
+	
+
 	public GraphFlow(int numberofNodes){
 		this.numberofNodes=numberofNodes;
 		this.numberofEdges=0;
@@ -29,11 +32,15 @@ public class GraphFlow {
 	public void addEdge(Edge edge){
 		
 		Nodes u =edge.getFromNode();
-		Nodes v= edge.getToNode();
+		Nodes v =edge.getToNode();
+		u.addNeighbourNode(v);
 		adjList.get(u.getId()).add(edge);
-		adjList.get(v.getId()).add(edge);
+		numberofEdges++;
 		
 	}
 	
+	public List<Edge> getAdjList(Nodes n) {
+		return adjList.get(n.getId());
+	}
 	
 }

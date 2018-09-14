@@ -4,7 +4,8 @@ public class Edge {
 	private Nodes fromNode;
 	private Nodes toNode;
 	private final int weight;
-	
+	private int flow;
+
 	public Edge(Nodes fromNode, Nodes toNodes, int weight){
 		this.fromNode=fromNode;
 		this.toNode=toNodes;
@@ -38,7 +39,7 @@ public class Edge {
 	}
 	
 	public String toString(){
-		return "("+fromNode+","+toNode+")"+weight;
+		return ""+fromNode+":"+toNode+":"+weight;
 	}
 	
 	public Nodes getOther(Nodes node){
@@ -49,6 +50,7 @@ public class Edge {
 			return fromNode;
 		}
 	}
+	
 	
 
 	

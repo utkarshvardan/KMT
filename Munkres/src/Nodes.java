@@ -1,13 +1,18 @@
+import java.util.List;
 
 public class Nodes {
 
-	private int id=0;
+	private int id;
 	private String name;
 	private boolean visited;
 	private int weight;
+	private List <Nodes> neighbourList;
 	
-
-	public Nodes(String name , int weight){
+    
+	
+	
+	public Nodes( String name, int id , int weight){
+		this.id=id;
 		this.name=name;
 		this.weight=weight;
 	}
@@ -46,6 +51,17 @@ public class Nodes {
 
 	public String toString(){
 		return this.id+"-"+this.name;
+	}
+	public List<Nodes> getNeighbourList() {
+		return neighbourList;
+	}
+
+	public void setNeighbourList(List<Nodes> neighbourList) {
+		this.neighbourList = neighbourList;
+	}
+	
+	public void addNeighbourNode(Nodes n){
+		this.neighbourList.add(n);
 	}
 	
 }
